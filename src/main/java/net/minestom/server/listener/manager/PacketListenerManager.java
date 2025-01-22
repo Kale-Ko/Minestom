@@ -119,7 +119,7 @@ public final class PacketListenerManager {
         }
 
         // Event
-        if (state == ConnectionState.PLAY) {
+        if (state == ConnectionState.CONFIGURATION || state == ConnectionState.PLAY) {
             PlayerPacketEvent playerPacketEvent = new PlayerPacketEvent(connection.getPlayer(), packet);
             EventDispatcher.call(playerPacketEvent);
             if (playerPacketEvent.isCancelled()) {
